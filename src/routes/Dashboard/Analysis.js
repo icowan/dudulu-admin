@@ -213,7 +213,7 @@ export default class Analysis extends Component {
       sm: 12,
       md: 12,
       lg: 12,
-      xl: 6,
+      xl: 8,
       style: {marginBottom: 24},
     };
 
@@ -266,27 +266,6 @@ export default class Analysis extends Component {
                 height={46}
                 data={visitData}
               />
-            </ChartCard>
-          </Col>
-          <Col {...topColResponsiveProps}>
-            <ChartCard
-              bordered={false}
-              title="运营活动效果"
-              action={<Tooltip title="指标说明"><Icon type="info-circle-o" /></Tooltip>}
-              total="78%"
-              footer={
-                <div style={{ whiteSpace: 'nowrap', overflow: 'hidden' }}>
-                  <Trend flag="up" style={{ marginRight: 16 }}>
-                    周同比<span className={styles.trendText}>12%</span>
-                  </Trend>
-                  <Trend flag="down">
-                    日环比<span className={styles.trendText}>11%</span>
-                  </Trend>
-                </div>
-              }
-              contentHeight={46}
-            >
-              <MiniProgress percent={78} strokeWidth={8} target={80} color="#13C2C2"/>
             </ChartCard>
           </Col>
         </Row>

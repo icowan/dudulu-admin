@@ -1,10 +1,10 @@
-import React, { PureComponent, createElement } from 'react';
+import React, {PureComponent, createElement} from 'react';
 import PropTypes from 'prop-types';
-import { Breadcrumb, Tabs } from 'antd';
+import {Breadcrumb, Tabs} from 'antd';
 import classNames from 'classnames';
 import styles from './index.less';
 
-const { TabPane } = Tabs;
+const {TabPane} = Tabs;
 
 export default class PageHeader extends PureComponent {
   static contextTypes = {
@@ -27,17 +27,18 @@ export default class PageHeader extends PureComponent {
     };
   };
   itemRender = (route, params, routes, paths) => {
-    const { linkElement = 'a' } = this.props;
+    const {linkElement = 'a'} = this.props;
     const last = routes.indexOf(route) === routes.length - 1;
     return (last || !route.component)
       ? <span>{route.breadcrumbName}</span>
       : createElement(linkElement, {
-        href: paths.join('/') || '/',
-        to: paths.join('/') || '/',
-      }, route.breadcrumbName);
+      href: paths.join('/') || '/',
+      to: paths.join('/') || '/',
+    }, route.breadcrumbName);
   }
+
   render() {
-    const { routes, params, location, breadcrumbNameMap } = this.getBreadcrumbProps();
+    const {routes, params, location, breadcrumbNameMap} = this.getBreadcrumbProps();
     const {
       title, logo, action, content, extraContent,
       breadcrumbList, tabList, className, linkElement = 'a',
@@ -124,7 +125,7 @@ export default class PageHeader extends PureComponent {
             onChange={this.onChange}
           >
             {
-              tabList.map(item => <TabPane tab={item.tab} key={item.key} />)
+              tabList.map(item => <TabPane tab={item.tab} key={item.key}/>)
             }
           </Tabs>
         }
